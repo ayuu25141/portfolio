@@ -11,7 +11,6 @@ const ProfileHeader = () => {
 <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
 
   {/* Profile Image */}
-  {/* Mobile par image thodi choti (h-24 w-24) aur sm: par wapis h-28 w-28 */}
   <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full border border-[#b8b5aa] bg-gray-200 shadow-sm sm:h-28 sm:w-28">
     <img
       src={myimage}
@@ -21,20 +20,22 @@ const ProfileHeader = () => {
   </div>
 
   {/* Name + Details */}
-  <div>
-    {/* Mobile par text thoda chota (text-2xl) taaki screen se bahar na jaye */}
+  <div className="min-w-0 w-full">
     <h1 className="text-2xl font-['JetBrains_Mono'] tracking-tight text-[#4a3500] sm:text-3xl">
       Ayush Chauhan
     </h1>
 
-    {/* Mobile par elements auto-wrap honge aur centered rahenge */}
-    <p className="mt-3 font-['IBM_Plex_Serif'] font-medium tracking-wide text-[#876817] flex flex-wrap justify-center sm:justify-start gap-y-1">
+    {/* 🌟 FIX: gap ko manage kiya aur text size ko mobile ke liye halka sa tight (text-[13px]) kiya taaki dots ke sath fit ho sake */}
+    <p className="mt-3 font-['IBM_Plex_Serif'] font-medium tracking-wide text-[#876817] text-[13px] sm:text-sm flex flex-wrap justify-center sm:justify-start gap-x-2 gap-y-1">
       <span>Full stack Developer</span>
-      <span className="mx-2 hidden sm:inline">·</span>
+      <span className="text-[#876817]/50 select-none">·</span>
+      
       <span>Golang / Java</span>
-      <span className="mx-2 hidden sm:inline">·</span>
+      <span className="text-[#876817]/50 select-none">·</span>
+      
       <span>Databases & Native Systems</span>
-      <span className="mx-2 hidden sm:inline">·</span>
+      <span className="text-[#876817]/50 select-none">·</span>
+      
       <span>Blockchain</span>
     </p>
   </div>
