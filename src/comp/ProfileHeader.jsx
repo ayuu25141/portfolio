@@ -2,7 +2,7 @@
 import myimage from "../assets/myimages/my.png"
 const ProfileHeader = () => {
   return (
-    <section className="min-h-screen bg-[#f7f4ea] text-[#4b3500]">
+    <section className=" bg-[#f7f4ea] text-[#4b3500]">
       <div className="mx-auto max-w-2xl px-6 pt-8 sm:px-8 sm:pt-12">
 
         {/* Profile Row */}
