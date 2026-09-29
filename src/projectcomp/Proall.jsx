@@ -74,76 +74,76 @@ const projects = [
   return (
 
 
-<section className="min-h-screen bg-[#f7f4ea] text-[#4b3500]">
-   <div className="mx-auto max-w-3xl px-6 sm:px-10 sm:pt-12">
+ <section className="h-fit bg-[#f7f4ea] text-[#4b3500]">
+      {/* Main Responsive Padding Wrapper */}
+      <div className="mx-auto max-w-2xl px-4 pt-6 sm:px-10 sm:pt-12">
 
-
-     <div className="flex items-end justify-between border-b border-[#4a3500]/10 pb-2 mb-4">
-  {/* Left Side: Your Existing Heading */}
-  <h2 className="text-2xl font-['JetBrains_Mono'] tracking-tight text-[#4a3500]">
-    Projects
-  </h2>
-
-  {/* Right Side: See More Link */}
-
-</div>
-
-
-
- {/* 2. Responsive Grid System */}
-
-
-    <div className="max-w-2xl mx-auto py-6 px-4 space-y-4 bg-[#f8f4e9]">
-      {projects.map((project) => (
-        <div key={project.id}>
-          {/* Title + Tech (same layout as reference) */}
-          <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1 mb-2">
-            <p className="font-['IBM_Plex_Serif']tracking-tight text-base font-semibold text-[#4a3500]">
-              {project.title}
-            </p>
-
-            {/* Tech tags joined with · */}
-            {project.tech?.length > 0 && (
-              <p className="font-['JetBrains_Mono'] text-sm leading-7 text-[#876a22] whitespace-nowrap">
-                {project.tech.join(" · ")}
-              </p>
-            )}
-          </div>
-
-          {/* Description */}
-          <p className="font-['JetBrains_Mono'] text-sm leading-7 text-[#876a22]">
-            {project.description}
-          </p>
-
-
-    {/* Bullet points */}
-          {project.bulletpoint?.length > 0 && (
-            <ul className="space-y-1 mb-4">
-              {project.bulletpoint.map((point, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-2 text-[14px] text-[#7a6f55]"
-                >
-                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#b8a88a] flex-shrink-0" />
-                  {point}
-                </li>
-              ))}
-            </ul>
-          )}  
-
-          {/* Thin line */}
-          <div className="mt-6 border-t border-[#e5dcc8]" />
+        {/* Projects Header Row */}
+        <div className="flex items-end justify-between border-b border-[#4a3500]/10 pb-2 mb-4 w-full">
+          {/* Left Side: Heading */}
+          <h2 className="text-xl sm:text-2xl font-['JetBrains_Mono'] tracking-tight text-[#4a3500]">
+            Projects
+          </h2>
         </div>
-      ))}
-    </div>
 
+        {/* 2. Responsive Grid System / Project List */}
+        {/* 🌟 FIX 2: Nested background container, extra hardcoded px aur py padding hata di taaki look seamless lage */}
+        <div className="w-full py-4 space-y-6 sm:space-y-8">
+          {projects.map((project) => (
+            <div key={project.id} className="group">
+              
+              {/* Title + Tech Row */}
+              {/* 🌟 FIX 3: flex-wrap hata kar 'flex-col sm:flex-row' kiya taaki phone par tech stack humesha next line se hi start ho */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-y-1 gap-x-4 mb-2">
+                {/* Project Title */}
+                <p className="font-['IBM_Plex_Serif'] tracking-tight text-base font-semibold text-[#4a3500]">
+                  {project.title}
+                </p>
 
-        
+                {/* Tech tags */}
+                {project.tech?.length > 0 && (
+                  /* 🌟 FIX 4: whitespace-nowrap hataya aur mobile par text-left rakha taaki automatic clean wrap ho */
+                  <p className="font-['JetBrains_Mono'] text-xs sm:text-sm text-[#876a22] flex flex-wrap gap-1 text-left sm:text-right">
+                    {project.tech.map((techItem, index) => (
+                      <span key={index} className="flex items-center whitespace-nowrap">
+                        {techItem}
+                        {index < project.tech.length - 1 && (
+                          <span className="mx-1.5 opacity-60">·</span>
+                        )}
+                      </span>
+                    ))}
+                  </p>
+                )}
+              </div>
+
+              {/* Description */}
+              <p className="font-['JetBrains_Mono'] text-sm leading-6 sm:leading-7 text-[#876a22] mb-3">
+                {project.description}
+              </p>
+
+              {/* Bullet points */}
+              {project.bulletpoint?.length > 0 && (
+                <ul className="space-y-1.5 mb-4 pl-1">
+                  {project.bulletpoint.map((point, idx) => (
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2 text-[14px] text-[#7a6f55] leading-relaxed"
+                    >
+                      <span className="mt-[8px] w-1 h-1 rounded-full bg-[#b8a88a] flex-shrink-0" />
+                      <span className="flex-1">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}  
+
+              {/* Thin line divider — last element ke baad hide karne ke liye group-last:hidden check call kiya */}
+              <div className="mt-6 border-t border-[#e5dcc8] group-last:hidden" />
+            </div>
+          ))}
+        </div>
+          
       </div>
-
-
     </section>
-   
 
 
         

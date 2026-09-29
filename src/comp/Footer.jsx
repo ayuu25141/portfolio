@@ -34,41 +34,42 @@ export default function Footer() {
   ];
 
   return (
-    <section className=" bg-[#f7f4ea] text-[#4b3500]">
+   <section className="bg-[#f7f4ea] text-[#4b3500]">
+  <div className="mx-auto max-w-2xl px-4 sm:px-10">
 
-      <div className="mx-auto max-w-2xl px-4 sm:px-10">
+    {/* Border same width as content */}
+    {/* Spacing ko normalize kiya taaki content upar se chipka na lage */}
+    <div className="border-t border-[#4b3500]/10 pt-6 sm:pt-10 pb-8">
 
-        {/* Border same width as content */}
-        <div className="border-t-2 border-[#4b3500]/10 pt-8 sm:pt-12 pb-8">
+      <footer className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-3 gap-x-6 font-['JetBrains_Mono'] text-xs sm:text-sm text-[#876a22]">
 
-          <footer className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-['JetBrains_Mono'] text-base leading-7 text-[#876a22]">
-
-            {/* Social Links */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              {links.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#4b3500] hover:underline underline-offset-4 decoration-[#4b3500]/40 transition-colors duration-200 cursor-pointer"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-
-            {/* Live Time */}
-            <div className="text-[#4b3500]/70 tabular-nums">
-              {time || '11:40 am ist'}
-            </div>
-
-          </footer>
-
+        {/* Social Links */}
+        {/* Mobile par elements easily flow karenge aur hover parameters perfectly work karenge */}
+        <div className="flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#4b3500] hover:underline underline-offset-4 decoration-[#4b3500]/40 transition-colors duration-200 cursor-pointer"
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
 
-      </div>
+        {/* Live Time */}
+        {/* Mobile par opacity and proper safe sizes apply kiye hain */}
+        <div className="text-[#4b3500]/60 tabular-nums font-medium whitespace-nowrap pt-1 sm:pt-0">
+          {time || '11:40 am ist'}
+        </div>
 
-    </section>
+      </footer>
+
+    </div>
+  </div>
+</section>
+
   );
 }
