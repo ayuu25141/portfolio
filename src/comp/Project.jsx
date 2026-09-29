@@ -67,14 +67,12 @@ const projects = [
         <div key={project.id} className="group">
 
           {/* Title + Tech Row */}
-          {/* 🌟 FIX 1: 'flex-wrap' hata kar 'flex-col sm:flex-row' kiya taaki phone par tech tags compulsory next line se hi start hon */}
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-y-1 gap-x-4 mb-2">
             <p className="font-['IBM_Plex_Serif'] tracking-tight text-[15px] sm:text-base font-semibold text-[#4a3500]">
               {project.title}
             </p>
 
             {project.tech?.length > 0 && (
-              /* 🌟 FIX 2: Mobile par 'justify-start text-left' kiya taaki naye line par safe start ho, sm: par 'sm:justify-end sm:text-right' */
               <p className="font-['JetBrains_Mono'] text-[11px] sm:text-sm leading-5 sm:leading-7 text-[#876a22] flex flex-wrap justify-start sm:justify-end gap-x-1 gap-y-0.5 text-left sm:text-right">
                 {project.tech.map((techItem, index) => (
                   <span key={index} className="flex items-center whitespace-nowrap">
@@ -95,7 +93,7 @@ const projects = [
 
           {/* Bullet points */}
           {project.bulletpoint?.length > 0 && (
-            <ul className="space-y-1.5 mb-4 pl-1">
+            <ul className="space-y-1.5 mb-3 pl-1">
               {project.bulletpoint.map((point, idx) => (
                 <li
                   key={idx}
@@ -108,6 +106,38 @@ const projects = [
             </ul>
           )}
 
+          {/* 🌟 NEW: Action Actionable Project Links Wrapper */}
+          {/* Mobile aur Computer screen dono par left side se uniform flow honge */}
+          {(project.github || project.demo) && (
+            <div className="flex items-center gap-x-4 font-['Geist_Mono'] text-[12px] sm:text-sm mt-3 mb-1 select-none">
+              
+              {/* Github Action */}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-[#4a3500]/70 hover:text-[#4a3500] transition-colors duration-200 underline underline-offset-4 decoration-[#4a3500]/20 hover:decoration-[#4a3500]"
+                >
+                  source <span className="opacity-60 text-xs">↗</span>
+                </a>
+              )}
+
+              {/* Live URL Demo Action */}
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-[#4a3500]/70 hover:text-[#4a3500] transition-colors duration-200 underline underline-offset-4 decoration-[#4a3500]/20 hover:decoration-[#4a3500]"
+                >
+                  live demo <span className="opacity-60 text-xs">↗</span>
+                </a>
+              )}
+
+            </div>
+          )}
+
           {/* Divider — last project ke baad hide */}
           <div className="mt-6 border-t border-[#e5dcc8] group-last:hidden" />
         </div>
@@ -116,6 +146,7 @@ const projects = [
 
   </div>
 </section>
+
 
 
         

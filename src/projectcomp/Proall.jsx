@@ -74,78 +74,108 @@ const projects = [
   return (
 
 
- <section className="h-fit bg-[#f7f4ea] text-[#4b3500]">
-      {/* Main Responsive Padding Wrapper */}
-      <div className="mx-auto max-w-2xl px-4 pt-6 sm:px-10 sm:pt-12">
+ <section className="bg-[#f7f4ea] text-[#4b3500]">
+  <div className="mx-auto max-w-2xl px-4 sm:px-10 pt-6 sm:pt-12">
 
-        {/* Projects Header Row */}
-        <div className="flex items-end justify-between border-b border-[#4a3500]/10 pb-2 mb-4 w-full">
-          {/* Left Side: Heading */}
-          <h2 className="text-xl sm:text-2xl font-['JetBrains_Mono'] tracking-tight text-[#4a3500]">
-            Projects
-          </h2>
-        </div>
+    {/* Header Row */}
+    <div className="flex items-end justify-between border-b border-[#4a3500]/10 pb-2">
+      <h2 className="text-lg sm:text-2xl font-['JetBrains_Mono'] tracking-tight text-[#4a3500]">
+        Projects
+      </h2>
+      <a
+        href="/projects"
+        rel="noopener noreferrer"
+        className="font-['Geist_Mono'] font-semibold text-xs sm:text-sm text-[#4a3500]/70 hover:text-[#4a3500] underline underline-offset-4 decoration-[#4a3500]/30 hover:decoration-[#4a3500] transition-all duration-200 pb-0.5"
+      >
+        see more <span className="text-base sm:text-lg inline-block transition-transform duration-200 hover:translate-x-0.5 hover:-translate-y-0.5">↗</span>
+      </a>
+    </div>
 
-        {/* 2. Responsive Grid System / Project List */}
-        {/* 🌟 FIX 2: Nested background container, extra hardcoded px aur py padding hata di taaki look seamless lage */}
-        <div className="w-full py-4 space-y-6 sm:space-y-8">
-          {projects.map((project) => (
-            <div key={project.id} className="group">
-              
-              {/* Title + Tech Row */}
-              {/* 🌟 FIX 3: flex-wrap hata kar 'flex-col sm:flex-row' kiya taaki phone par tech stack humesha next line se hi start ho */}
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-y-1 gap-x-4 mb-2">
-                {/* Project Title */}
-                <p className="font-['IBM_Plex_Serif'] tracking-tight text-base font-semibold text-[#4a3500]">
-                  {project.title}
-                </p>
+    {/* Project List */}
+    <div className="py-6 space-y-6 sm:space-y-8">
+      {projects.map((project) => (
+        <div key={project.id} className="group">
 
-                {/* Tech tags */}
-                {project.tech?.length > 0 && (
-                  /* 🌟 FIX 4: whitespace-nowrap hataya aur mobile par text-left rakha taaki automatic clean wrap ho */
-                  <p className="font-['JetBrains_Mono'] text-xs sm:text-sm text-[#876a22] flex flex-wrap gap-1 text-left sm:text-right">
-                    {project.tech.map((techItem, index) => (
-                      <span key={index} className="flex items-center whitespace-nowrap">
-                        {techItem}
-                        {index < project.tech.length - 1 && (
-                          <span className="mx-1.5 opacity-60">·</span>
-                        )}
-                      </span>
-                    ))}
-                  </p>
-                )}
-              </div>
+          {/* Title + Tech Row */}
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-y-1 gap-x-4 mb-2">
+            <p className="font-['IBM_Plex_Serif'] tracking-tight text-[15px] sm:text-base font-semibold text-[#4a3500]">
+              {project.title}
+            </p>
 
-              {/* Description */}
-              <p className="font-['JetBrains_Mono'] text-sm leading-6 sm:leading-7 text-[#876a22] mb-3">
-                {project.description}
+            {project.tech?.length > 0 && (
+              <p className="font-['JetBrains_Mono'] text-[11px] sm:text-sm leading-5 sm:leading-7 text-[#876a22] flex flex-wrap justify-start sm:justify-end gap-x-1 gap-y-0.5 text-left sm:text-right">
+                {project.tech.map((techItem, index) => (
+                  <span key={index} className="flex items-center whitespace-nowrap">
+                    {techItem}
+                    {index < project.tech.length - 1 && (
+                      <span className="mx-1.5 opacity-60">·</span>
+                    )}
+                  </span>
+                ))}
               </p>
+            )}
+          </div>
 
-              {/* Bullet points */}
-              {project.bulletpoint?.length > 0 && (
-                <ul className="space-y-1.5 mb-4 pl-1">
-                  {project.bulletpoint.map((point, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start gap-2 text-[14px] text-[#7a6f55] leading-relaxed"
-                    >
-                      <span className="mt-[8px] w-1 h-1 rounded-full bg-[#b8a88a] flex-shrink-0" />
-                      <span className="flex-1">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}  
+          {/* Description */}
+          <p className="font-['JetBrains_Mono'] text-[13px] sm:text-sm leading-6 sm:leading-7 text-[#876a22] mb-3">
+            {project.description}
+          </p>
 
-              {/* Thin line divider — last element ke baad hide karne ke liye group-last:hidden check call kiya */}
-              <div className="mt-6 border-t border-[#e5dcc8] group-last:hidden" />
+          {/* Bullet points */}
+          {project.bulletpoint?.length > 0 && (
+            <ul className="space-y-1.5 mb-3 pl-1">
+              {project.bulletpoint.map((point, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-2 text-[13px] sm:text-[14px] text-[#7a6f55] leading-relaxed"
+                >
+                  <span className="mt-[7px] w-1 h-1 rounded-full bg-[#b8a88a] flex-shrink-0" />
+                  <span className="flex-1">{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* 🌟 NEW: Action Actionable Project Links Wrapper */}
+          {/* Mobile aur Computer screen dono par left side se uniform flow honge */}
+          {(project.github || project.demo) && (
+            <div className="flex items-center gap-x-4 font-['Geist_Mono'] text-[12px] sm:text-sm mt-3 mb-1 select-none">
+              
+              {/* Github Action */}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-[#4a3500]/70 hover:text-[#4a3500] transition-colors duration-200 underline underline-offset-4 decoration-[#4a3500]/20 hover:decoration-[#4a3500]"
+                >
+                  source <span className="opacity-60 text-xs">↗</span>
+                </a>
+              )}
+
+              {/* Live URL Demo Action */}
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-[#4a3500]/70 hover:text-[#4a3500] transition-colors duration-200 underline underline-offset-4 decoration-[#4a3500]/20 hover:decoration-[#4a3500]"
+                >
+                  live demo <span className="opacity-60 text-xs">↗</span>
+                </a>
+              )}
+
             </div>
-          ))}
+          )}
+
+          {/* Divider — last project ke baad hide */}
+          <div className="mt-6 border-t border-[#e5dcc8] group-last:hidden" />
         </div>
-          
-      </div>
-    </section>
+      ))}
+    </div>
 
-
+  </div>
+</section>
         
     
     
