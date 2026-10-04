@@ -7,7 +7,7 @@ import Projectshow from "./page/Projectshow"
 import About from "./page/About"
 function App() {
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
