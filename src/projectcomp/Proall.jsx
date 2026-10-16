@@ -149,9 +149,9 @@ const projects = [
           </p>
 
           {/* Bullet points */}
-          {project.bulletpoint?.length > 0 && (
+          {project.bulletpoints?.length > 0 && (
             <ul className="space-y-1.5 mb-3 pl-1">
-              {project.bulletpoint.map((point, idx) => (
+              {project.bulletpoints.map((point, idx) => (
                 <li
                   key={idx}
                   className="flex items-start gap-2 text-[13px] sm:text-[14px] text-[#7a6f55] leading-relaxed"
