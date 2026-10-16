@@ -5,35 +5,51 @@ export default function Project() {
   // 1. Projects Data Object Array
  
 const projects = [
-  {
-          id: 1,
-    title: "Oneupload Webapp",
-    description: "Oneupload is free webapp to share photos with privacy password with expires time and more",
-    bulletpoint : ["point","point2"],
-    tech: ["Golang","fiber","postgres","react","cloudinary"],
-    github: "https://github.com/ayuu25141/Oneupload",
-    demo: "https://oneuploadme.vercel.app",
- 
-  },
-  {
-          id: 2,
-  title: "TreeifyJson",
-  description:
-    "TreeifyJSON is a web application that transforms complex JSON data into an interactive tree structure, making it easy to visualize, explore, and understand nested objects and arrays.",
-  tech: ["React", "JS", "Golang","Fiber", "Tailwind CSS"],
-  github: "https://github.com/ayuu25141/TreeifyJson",
-  demo: "https://treeifyjson.vercel.app",
-
-},
  {
-          id: 3,
-    title: "Full-Stack Task App",
-    description: "A task management web app with user authentication, offline support, and real-time updates.",
-    tech: ["React", "Golang", "PostgreSQL", "Axios", "TanStack Query"],
-    github: "https://github.com/ayuu25141/Full-Stack-TaskManage-webapp",
-    demo: "https://nextaskme.vercel.app",
-
-  },
+  "id": 1,
+  "title": "Oneupload",
+  "description": "A secure, fast, and time-bound image sharing platform featuring password-protected access and private shareable galleries.",
+  "tech": ["Golang", "Fiber", "PostgreSQL", "React", "Cloudinary", "JWT"],
+  "github": "https://github.com/ayuu25141/Oneupload",
+  "demo": "https://oneuploadme.vercel.app",
+  "bulletpoints": [
+    "Developed a high-performance RESTful API using Go (Fiber) and PostgreSQL for seamless image metadata management.",
+    "Engineered a time-bound and password-protected sharing mechanism with secure URL generation.",
+    "Implemented stateless user authentication and protected routes using JSON Web Tokens (JWT).",
+    "Integrated Cloudinary API for optimized external media storage and immediate delivery.",
+    "Built a modern, responsive single-page application using React and Tailwind CSS."
+  ]
+},
+{
+  "id": 2,
+  "title": "TreeifyJson",
+  "description": "TreeifyJSON is a modern web application that transforms complex, nested JSON data into interactive, human-readable tree structures with built-in validation and node search.",
+  "tech": ["React", "JavaScript", "Golang", "Fiber", "Tailwind CSS"],
+  "github": "https://github.com/ayuu25141/TreeifyJson",
+  "demo": "https://treeifyjson.vercel.app",
+  "bulletpoints": [
+    "Engineered an interactive tree visualization engine in React to recursively map deeply nested JSON data.",
+    "Developed a fast, production-ready parsing and JSON validation API using Go (Fiber).",
+    "Implemented a client-side node search algorithm featuring real-time visual result highlighting.",
+    "Optimized component state and rendering processes to smoothly handle extensive JSON object trees.",
+    "Built a modern developer-centric user interface using Tailwind CSS with seamless file uploading features."
+  ]
+},
+{
+  "id": 3,
+  "title": "NextTask",
+  "description": "A secure, production-grade task management platform featuring state-of-the-art UI/UX dashboards, comprehensive productivity reports, offline resiliency, and robust database pooling.",
+  "tech": ["React", "Golang", "PostgreSQL", "Axios", "TanStack Query", "Tailwind CSS"],
+  "github": "https://github.com/ayuu25141/Full-Stack-TaskManage-webapp",
+  "demo": "https://nextaskme.vercel.app",
+  "bulletpoints": [
+    "Integrated TanStack Query and Axios to implement efficient server-state caching, automatic background updates, and seamless query revalidation.",
+    "Designed a modern, developer-centric analytics dashboard providing granular task tracking and responsive progress reporting workflows.",
+    "Engineered local storage mechanics to facilitate robust offline support and seamless synchronization when network access restores.",
+    "Architected a secure and scalable backend service utilizing Go and PostgreSQL with integrated middleware for encrypted payload protection.",
+    "Optimized relational database queries and structured API handlers to ensure clean, low-latency transaction processing for high-volume task operations."
+  ]
+},
   
 
 ];
