@@ -1,6 +1,8 @@
 import React from 'react';
 import {Accordion} from "@heroui/react";
 
+import { Link } from 'react-router-dom';
+
 export default function Project() {
   // 1. Projects Data Object Array
  
@@ -68,13 +70,15 @@ const projects = [
       <h2 className="text-lg sm:text-2xl font-['JetBrains_Mono'] tracking-tight text-[#4a3500]">
         Projects
       </h2>
-      <a
-        href="/projects"
-        rel="noopener noreferrer"
-        className="font-['Geist_Mono'] font-semibold text-xs sm:text-sm text-[#4a3500]/70 hover:text-[#4a3500] underline underline-offset-4 decoration-[#4a3500]/30 hover:decoration-[#4a3500] transition-all duration-200 pb-0.5"
-      >
-        see more <span className="text-base sm:text-lg inline-block transition-transform duration-200 hover:translate-x-0.5 hover:-translate-y-0.5">↗</span>
-      </a>
+<Link
+  to="/projects"
+  className="font-['Geist_Mono'] font-semibold text-xs sm:text-sm text-[#4a3500]/70 hover:text-[#4a3500] underline underline-offset-4 decoration-[#4a3500]/30 hover:decoration-[#4a3500] transition-all duration-200 pb-0.5"
+>
+  see more
+  <span className="text-base sm:text-lg inline-block transition-transform duration-200 hover:translate-x-0.5 hover:-translate-y-0.5">
+    ↗
+  </span>
+</Link>
     </div>
 
     {/* Project List */}
