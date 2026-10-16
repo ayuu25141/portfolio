@@ -5,63 +5,96 @@ export default function Proall() {
   // 1. Projects Data Object Array
  
 const projects = [
-  {
-          id: 1,
-    title: "Oneupload Webapp",
-    description: "Oneupload is free webapp to share photos with privacy password with expires time and more",
-    bulletpoint : ["point","point2"],
-    tech: ["Golang","fiber","postgres","react","cloudinary"],
-    github: "https://github.com/ayuu25141/Oneupload",
-    demo: "https://oneuploadme.vercel.app",
- 
-  },
-  {
-          id: 2,
-  title: "TreeifyJson",
-  description:
-    "TreeifyJSON is a web application that transforms complex JSON data into an interactive tree structure, making it easy to visualize, explore, and understand nested objects and arrays.",
-  tech: ["React", "JS", "Golang","Fiber", "Tailwind CSS"],
-  github: "https://github.com/ayuu25141/TreeifyJson",
-  demo: "https://treeifyjson.vercel.app",
-
-},
  {
-          id: 3,
-    title: "Full-Stack Task App",
-    description: "A task management web app with user authentication, offline support, and real-time updates.",
-    tech: ["React", "Golang", "PostgreSQL", "Axios", "TanStack Query"],
-    github: "https://github.com/ayuu25141/Full-Stack-TaskManage-webapp",
-    demo: "https://nextaskme.vercel.app",
-
-  },
+  "id": 1,
+  "title": "Oneupload",
+  "description": "A secure, fast, and time-bound image sharing platform featuring password-protected access and private shareable galleries.",
+  "tech": ["Golang", "Fiber", "PostgreSQL", "React", "Cloudinary", "JWT"],
+  "github": "https://github.com/ayuu25141/Oneupload",
+  "demo": "https://oneuploadme.vercel.app",
+  "bulletpoints": [
+    "Developed a high-performance RESTful API using Go (Fiber) and PostgreSQL for seamless image metadata management.",
+    "Engineered a time-bound and password-protected sharing mechanism with secure URL generation.",
+    "Implemented stateless user authentication and protected routes using JSON Web Tokens (JWT).",
+    "Integrated Cloudinary API for optimized external media storage and immediate delivery.",
+    "Built a modern, responsive single-page application using React and Tailwind CSS."
+  ]
+},
+{
+  "id": 2,
+  "title": "TreeifyJson",
+  "description": "TreeifyJSON is a modern web application that transforms complex, nested JSON data into interactive, human-readable tree structures with built-in validation and node search.",
+  "tech": ["React", "JavaScript", "Golang", "Fiber", "Tailwind CSS"],
+  "github": "https://github.com/ayuu25141/TreeifyJson",
+  "demo": "https://treeifyjson.vercel.app",
+  "bulletpoints": [
+    "Engineered an interactive tree visualization engine in React to recursively map deeply nested JSON data.",
+    "Developed a fast, production-ready parsing and JSON validation API using Go (Fiber).",
+    "Implemented a client-side node search algorithm featuring real-time visual result highlighting.",
+    "Optimized component state and rendering processes to smoothly handle extensive JSON object trees.",
+    "Built a modern developer-centric user interface using Tailwind CSS with seamless file uploading features."
+  ]
+},
+{
+  "id": 3,
+  "title": "NextTask",
+  "description": "A secure, production-grade task management platform featuring state-of-the-art UI/UX dashboards, comprehensive productivity reports, offline resiliency, and robust database pooling.",
+  "tech": ["React", "Golang", "PostgreSQL", "Axios", "TanStack Query", "Tailwind CSS"],
+  "github": "https://github.com/ayuu25141/Full-Stack-TaskManage-webapp",
+  "demo": "https://nextaskme.vercel.app",
+  "bulletpoints": [
+    "Integrated TanStack Query and Axios to implement efficient server-state caching, automatic background updates, and seamless query revalidation.",
+    "Designed a modern, developer-centric analytics dashboard providing granular task tracking and responsive progress reporting workflows.",
+    "Engineered local storage mechanics to facilitate robust offline support and seamless synchronization when network access restores.",
+    "Architected a secure and scalable backend service utilizing Go and PostgreSQL with integrated middleware for encrypted payload protection.",
+    "Optimized relational database queries and structured API handlers to ensure clean, low-latency transaction processing for high-volume task operations."
+  ]
+},
     {
-              id: 4,
-    title: "Generative Webapp ",
-    description: "Genreate the Html form with Ai with Good Design",
-    tech: ["React","Golang"],
-    github: "https://github.com/ayuu25141/Full-Stack-WebApp-GenAi",
-    demo: "https://formgenai.vercel.app",
-    
-  },
-  {
-          id: 5,
-  title: "Montre Luxe",
-  description:
-    "A premium luxury watch website with a modern and elegant design. Built using React with smooth animations, responsive layouts, and a high-end shopping experience.",
-  tech: ["React", "JavaScript", "Tailwind CSS"],
-  github: "https://github.com/ayuu25141/",
-  demo: "https://montreluxe.vercel.app",
- 
+  "id": 4,
+  "title": "FormGen AI",
+  "description": "An ultra-fast full-stack web application leveraging Generative AI and the Grok API to automatically convert complex natural language prompts into beautifully designed, fully operational HTML forms.",
+  "tech": ["React", "Golang", "Grok API", "Tailwind CSS"],
+  "github": "https://github.com/ayuu25141/Full-Stack-WebApp-GenAi",
+  "demo": "https://formgenai.vercel.app",
+  "bulletpoints": [
+    "Integrated the high-performance Grok API into a Golang backend pipeline to enable real-time dynamic HTML module production.",
+    "Formulated defensive prompt-engineering wrappers to enforce production-ready architectural rules on incoming AI responses.",
+    "Built a secure runtime preview frame within React to isolate, render, and visually display the generated structural forms.",
+    "Optimized data flows between client requests and foreign AI model endpoints to preserve minimal processing overhead.",
+    "Designed a developer-centric UI equipped with visual toggle configurations, interactive editing boards, and instant output export options."
+  ]
+},
+ {
+  "id": 5,
+  "title": "Montre Luxe",
+  "description": "A premium luxury watch presentation site crafted with elite UI/UX paradigms, fluid physics-based micro-interactions, custom interactive carousels, and high-end visual design systems.",
+  "tech": ["React", "JavaScript", "Tailwind CSS", "Motion"],
+  "github": "https://github.com",
+  "demo": "https://montreluxe.vercel.app",
+  "bulletpoints": [
+    "Engineered an elegant, luxury e-commerce UI architecture in React to deliver an immersive watch collection experience.",
+    "Implemented sophisticated physics-based layout transitions and smooth animation sequences for high-end micro-interactions.",
+    "Utilized Tailwind CSS to structure a responsive layout optimizing visual anchors, typography, and premium spacing components.",
+    "Designed an optimized, drift-free client-side media slider utilizing managed interval loops and gesture tracking states.",
+    "Integrated custom gradient overlays and modular component assemblies to ensure minimal load latency and elite web aesthetics."
+  ]
 },
 
  {
-          id: 6,
-  title: "Trekking Site",
-  description: "A simple trekking website made with React. It’s fast and easy to use with clean pages.",
-  tech: ["React", "Javascript", "Tailwind"],
-  github: "https://github.com/ayuu25141/",
-  demo: "https://trekkingwebsite.vercel.app",
-  
+  "id": 6,
+  "title": "Trekking Site",
+  "description": "A high-performance discovery platform built for a trekking company to present complex trail data, route metrics, and geographical locations through a clean, interactive user interface.",
+  "tech": ["React", "JavaScript", "Tailwind CSS"],
+  "github": "https://github.com",
+  "demo": "https://trekkingwebsite.vercel.app",
+  "bulletpoints": [
+    "Engineered a fast, data-centric discovery platform in React to effectively catalog and showcase complex trekking route details.",
+    "Implemented client-side data filtering states to enable real-time searching and grouping of geographical places.",
+    "Optimized application performance and bundle sizes using Vite to guarantee fast loading speeds over low-bandwidth mobile connections.",
+    "Built a modular component architecture with Tailwind CSS, ensuring clean data presentation layouts across all viewports.",
+    "Designed an intuitive information workflow with robust client-side navigation to map out day-by-day trail itineraries cleanly."
+  ]
 },
 
 

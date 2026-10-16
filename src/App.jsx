@@ -5,9 +5,18 @@ import music from "./assets/mysong/song.mp3";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Projectshow from "./page/Projectshow"
 import About from "./page/About"
+
+
+
 function App() {
+
+
+
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
+
+
+
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -43,6 +52,8 @@ function App() {
     <>
 
     <BrowserRouter>
+
+   
      <audio ref={audioRef} src={music} />
 
 
