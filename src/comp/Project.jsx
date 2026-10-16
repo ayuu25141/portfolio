@@ -72,7 +72,8 @@ const projects = [
       </h2>
 <Link
   to="/projects"
-  className="font-['Geist_Mono'] font-semibold text-xs sm:text-sm text-[#4a3500]/70 hover:text-[#4a3500] underline underline-offset-4 decoration-[#4a3500]/30 hover:decoration-[#4a3500] transition-all duration-200 pb-0.5"
+   onClick={() => window.scrollTo(0, 0)}
+  className="font-['Geist_Mono'] font-semibold text-xs sm:text-sm text-[#4a3500]/70 hover:text-[#4a3500] underline underline-offset-4 decoration-[#4a3500]/30 hover:decoration-[#4a3500] transition-all  duration-200 pb-0.5"
 >
   see more
   <span className="text-base sm:text-lg inline-block transition-transform duration-200 hover:translate-x-0.5 hover:-translate-y-0.5">
